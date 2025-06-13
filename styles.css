@@ -61,7 +61,7 @@ header {
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            background-color: var(--base-800);
+            background-color: black;
             color: var(--base-100);
             height: 64px;
             width: 64px;
@@ -69,8 +69,11 @@ header {
             border-radius: 50%;
         }
 
-        .logo-text {
+        .logo-text { 
             flex: 1;
+            color: var(--base-800);
+            /* font-weight: 400; */
+            /* font-size: 32px; */
         }
     }
 
