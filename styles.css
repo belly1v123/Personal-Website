@@ -446,6 +446,17 @@ h3 {
             text-decoration: none;
         }
     }
+
+    .iframe-zoom-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden; /* prevent scrollbars */
+  border-radius: 15px;
+  background: #e0f7ff;
+  position: relative;
+}
+
+
 }
 
 
@@ -517,7 +528,7 @@ h3 {
 /* Certificates Section */
 .certificates-grid {
     /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
-
+    height: fit-content;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;

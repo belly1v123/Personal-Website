@@ -54,15 +54,17 @@ window.onclick = function (e) {
 const heart = document.getElementById('heart');
 const audio = new Audio('heart-sound.m4a');
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const heart = document.getElementById('heart');
-            const heartSound = document.getElementById('heart-sound');
+document.addEventListener('DOMContentLoaded', function () {
+  const heart = document.getElementById('heart');
+  const heartSound = document.getElementById('heart-sound');
 
-            if (heart && heartSound) {
-                heart.addEventListener('click', function() {
-                    // Rewind to the start of the audio before playing
-                    heartSound.currentTime = 0;
-                    heartSound.play();
-                });
-            }
-        });
+  if (heart && heartSound) {
+    heart.addEventListener('click', function () {
+      // Rewind to the start of the audio before playing
+      heartSound.currentTime = 0;
+      heartSound.play();
+    });
+  }
+});
+
+
