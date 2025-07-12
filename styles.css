@@ -107,7 +107,7 @@ header {
             display: none;
             cursor: pointer;
             transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-            border-radius: 50%;
+            border-radius: 7px;
             padding: 8px;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -471,8 +471,8 @@ h3 {
 }
 
 .tab-btn {
-    background: #e0e7ff;
-    color: #222;
+    background: var(--blue-100);
+    color: var(--base-800);
     border: none;
     padding: 10px 24px;
     border-radius: 6px;
@@ -654,9 +654,6 @@ h3 {
 }
 
 
-
-
-
 footer {
     /* background-color: var(--blue-100); */
     /* Light background */
@@ -756,7 +753,7 @@ footer .heart {
     display: none;
     cursor: pointer;
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-    border-radius: 50%;
+    border-radius: 2px;
     padding: 8px;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -782,7 +779,7 @@ footer .heart {
 
 /* Click (active) effect */
 .mobile-toggle:active {
-    background: rgba(37, 99, 235, 0.25);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    background: var(--blue-800)
+    box-shadow: 0 2px 8px var(--blue-100)
     transform: scale(0.96);
 }
