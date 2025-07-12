@@ -276,8 +276,6 @@ section {
 
 
 
-
-
 h1 {
     font-size: 64px;
     line-height: 1;
@@ -448,20 +446,53 @@ h3 {
     }
 
     .iframe-zoom-container {
-  width: 100%;
-  height: 400px;
-  overflow: hidden; /* prevent scrollbars */
-  border-radius: 15px;
-  background: #e0f7ff;
-  position: relative;
-}
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        /* prevent scrollbars */
+        border-radius: 15px;
+        background: #e0f7ff;
+        position: relative;
+    }
 
 
 }
 
+/* Project Tabs Styling */
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
 
+.tab-btn {
+    background: #e0e7ff;
+    color: #222;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
 
+.tab-btn:hover {
+    background: var(--blue-400);
+    color: #fff;
+}
 
+.tab-btn.active {
+    background: var(--blue-800);
+    color: #fff;
+}
+
+/* Optional: Hide filler card when filtering */
+.holder-blue.filler-card[data-category="filler"] {
+    /* You can style the filler card here if needed */
+}
 
 /* Container styling */
 .contact {
@@ -643,4 +674,19 @@ footer .heart {
 .heart:hover {
     color: #ff0000;
     /* Makes heart red on hover */
+}
+
+/* Project Grid: Default 2 columns for 'All' tab */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Responsive: 1 column on small screens */
+@media (max-width: 700px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }

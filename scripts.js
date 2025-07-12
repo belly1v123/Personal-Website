@@ -67,4 +67,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+function filterProjects(category) {
+    const cards = document.querySelectorAll('.project-grid .holder-blue');
+    cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // Update active tab styling
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.tab-btn[onclick*="${category}"]`).classList.add('active');
+}
+
 
