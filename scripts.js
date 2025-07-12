@@ -1,8 +1,28 @@
 // Toggle mobile menu
 
 function toggleMobileMenu() {
-  document.getElementById("menu").classList.toggle("active");
+  const overlay = document.getElementById("mobileMenuOverlay");
+  overlay.classList.toggle("active");
 }
+
+// Optional: close overlay when clicking outside or on a link
+document.addEventListener('click', function (e) {
+  const overlay = document.getElementById("mobileMenuOverlay");
+  const hamburger = document.querySelector('.mobile-toggle');
+  if (overlay.classList.contains('active')) {
+    // Only close if clicking outside overlay and not on hamburger
+    if (
+      !overlay.contains(e.target) &&
+      (!hamburger.contains(e.target))
+    ) {
+      overlay.classList.remove('active');
+    }
+    // Close if clicking a link inside overlay
+    if (overlay.contains(e.target) && e.target.tagName === 'A') {
+      overlay.classList.remove('active');
+    }
+  }
+});
 
 // Typed.js animation
 document.addEventListener("DOMContentLoaded", function () {
@@ -68,18 +88,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function filterProjects(category) {
-    const cards = document.querySelectorAll('.project-grid .holder-blue');
-    cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-            card.style.display = '';
-        } else {
-            card.style.display = 'none';
-        }
-    });
+  const cards = document.querySelectorAll('.project-grid .holder-blue');
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 
-    // Update active tab styling
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`.tab-btn[onclick*="${category}"]`).classList.add('active');
+  // Update active tab styling
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.tab-btn[onclick*="${category}"]`).classList.add('active');
 }
 
 

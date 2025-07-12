@@ -105,8 +105,12 @@ header {
 
         .mobile-toggle {
             display: none;
-            color: var(--base-800);
-            padding: 10px;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            border-radius: 50%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
             @media (max-width:768px) {
                 display: inline-block;
@@ -489,9 +493,18 @@ h3 {
     color: #fff;
 }
 
-/* Optional: Hide filler card when filtering */
-.holder-blue.filler-card[data-category="filler"] {
-    /* You can style the filler card here if needed */
+@media (max-width: 500px) {
+    .project-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .tab-btn {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px 0;
+    }
 }
 
 /* Container styling */
@@ -689,4 +702,87 @@ footer .heart {
     .project-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Hamburger overlay styles */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80vw;
+    max-width: 350px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    /* 80% fade */
+    box-shadow: -2px 0 16px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px;
+}
+
+.mobile-menu-overlay.active {
+    right: 0;
+}
+
+.mobile-menu-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-overlay li {
+    margin-bottom: 24px;
+}
+
+.mobile-menu-overlay a {
+    font-size: 1.3em;
+    color: var(--blue-800);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.mobile-menu-overlay a.button {
+    background: var(--blue-800);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+/* Hamburger icon styles */
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    border-radius: 50%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: inline-block !important;
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 10000;
+    }
+}
+
+/* Hover effect */
+.mobile-toggle:hover {
+    background: rgba(37, 99, 235, 0.15);
+    /* Slight blue tint */
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
+    transform: scale(1.08);
+}
+
+/* Click (active) effect */
+.mobile-toggle:active {
+    background: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    transform: scale(0.96);
 }
