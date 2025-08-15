@@ -779,7 +779,7 @@ footer .heart {
 
 /* Click (active) effect */
 .mobile-toggle:active {
-    background: var(--blue-800)
-    box-shadow: 0 2px 8px var(--blue-100)
+    background: var(--blue-800);
+    box-shadow: 0 2px 8px var(--blue-100);
     transform: scale(0.96);
 }

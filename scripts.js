@@ -70,6 +70,21 @@ window.onclick = function (e) {
     closeModal();
   }
 };
+
+// Close modal (and mobile menu) on ESC
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('certificateModal');
+    if (modal && modal.style.display === 'flex') {
+      closeModal();
+    }
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (overlay && overlay.classList.contains('active')) {
+      overlay.classList.remove('active');
+    }
+  }
+});
+
 // Heart sound effect
 const heart = document.getElementById('heart');
 const audio = new Audio('heart-sound.m4a');
